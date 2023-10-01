@@ -6,27 +6,27 @@ import { MaterialsModule } from './material.module';
 import { LeftNavComponent } from '../core/components/left-nav/left-nav.component';
 import { LayoutComponent } from '../core/components/layout/layout.component';
 import { RouterModule } from '@angular/router';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
-    declarations: [],
-    providers: [],
-    imports: [
-        CommonModule,
-        RouterModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MaterialsModule,
-
-    ],
-    exports: [
-        CommonModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MaterialsModule,
-        RouterModule,
-
-    ],
+  declarations: [],
+  providers: [],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialsModule,
+    FlexLayoutModule,
+  ],
+  exports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialsModule,
+    FlexLayoutModule,
+    RouterModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

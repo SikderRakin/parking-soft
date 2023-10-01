@@ -7,13 +7,15 @@
       </a>
     </div>
     <div class="menu-block">
-      <h6 class="menu-title">Sales</h6>
+      <h6 class="menu-title">Vehicle Info</h6>
       <div class="list-padding">
-        <a mat-list-item class="sub-list" routerLinkActive="active">
-          <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon>POS
+        <a mat-list-item class="sub-list" [routerLink]="['/vehicle/save']" routerLinkActive="active">
+          <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon> <span
+            style="color: aliceblue;">VehicleInfo Save</span>
         </a>
-        <a mat-list-item class="sub-list" routerLinkActive="active">
-          <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon>Order List
+        <a mat-list-item class="sub-list" [routerLink]="['/vehicle/list']" routerLinkActive="active">
+          <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon><span
+            style="color: aliceblue;">VehicleInfo List</span>
         </a>
         <a mat-list-item class="sub-list" routerLinkActive="active">
           <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon>Stock List

@@ -1,1 +1,113 @@
-<p>vehicle-save works!</p>
+<mat-card>
+  <mat-card-content>
+    <form fxLayout="row wrap" fxLayoutGap="16px grid" [formGroup]="vehicleForm">
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>License Number</mat-label>
+          <input matInput formControlName="licenseNo" type="text">
+          <mat-error
+            *ngIf="vehicleForm.controls['licenseNo']?.errors?.['required'] && (vehicleForm.controls['licenseNo']?.dirty ||vehicleForm.controls['licenseNo']?.touched )">
+            This is required Field
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Vehicle Types</mat-label>
+          <mat-select formControlName="vehicleTypes">
+            <mat-option *ngFor="let item of vehicleType" [value]=item.id>{{item.title}}</mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="vehicleForm.controls['vehicleTypes']?.errors?.['required'] && (vehicleForm.controls['vehicleTypes']?.dirty ||vehicleForm.controls['vehicleTypes']?.touched )">
+            This is required Field
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Owner name</mat-label>
+          <input matInput formControlName="ownerName" type="text">
+          <mat-error
+            *ngIf="vehicleForm.controls['ownerName']?.errors?.['required'] && (vehicleForm.controls['ownerName']?.dirty ||vehicleForm.controls['ownerName']?.touched )">
+            This is required Field
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Owner Phone</mat-label>
+          <input matInput formControlName="ownerPhone" type="text">
+          <mat-error
+            *ngIf="vehicleForm.controls['ownerPhone']?.errors?.['required'] && (vehicleForm.controls['ownerPhone']?.dirty ||vehicleForm.controls['ownerPhone']?.touched )">
+            This is required Field
+          </mat-error>
+          <mat-error *ngIf="vehicleForm.controls['ownerPhone']?.errors?.['pattern']">
+            This Not a valid Number
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+
+        <mat-label>Status</mat-label>
+
+        <mat-radio-group formControlName="status" aria-label="Select an option">
+          <mat-radio-button class="example-radio-button" *ngFor="let item of status" [value]="item.id">
+            {{item.title}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+      </div>
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Owner Address</mat-label>
+          <textarea matInput formControlName="ownerAddress"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field>
+          <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" formControlName="entryTime"
+            [min]="minDate" [max]="maxDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+            [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi">
+            <ngx-mat-datepicker-actions>
+              <button mat-button ngxMatDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" ngxMatDatepickerApply>Apply</button>
+            </ngx-mat-datepicker-actions>
+          </ngx-mat-datetime-picker>
+        </mat-form-field>
+
+      </div>
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field>
+          <input matInput [ngxMatDatetimePicker]="picker1" placeholder="Choose a date" formControlName="exitTime"
+            [min]="minDate" [max]="maxDate">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <ngx-mat-datetime-picker #picker1 [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+            [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi">
+            <ngx-mat-datepicker-actions>
+              <button mat-button ngxMatDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" ngxMatDatepickerApply>Apply</button>
+            </ngx-mat-datepicker-actions>
+          </ngx-mat-datetime-picker>
+
+        </mat-form-field>
+
+      </div>
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Parking charge</mat-label>
+          <input matInput formControlName="charge" type="number">
+          <mat-error
+            *ngIf="vehicleForm.controls['charge']?.errors?.['required'] && (vehicleForm.controls['charge']?.dirty ||vehicleForm.controls['charge']?.touched )">
+            This is required Field
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <button [disabled]="!vehicleForm.valid" (click)="onSubmit()" mat-raised-button
+      color="primary">{{params?'Edit':'Submit'}}</button>
+  </mat-card-content>
+</mat-card>

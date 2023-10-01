@@ -13,10 +13,10 @@
         <span></span>
       </button>
       <span *ngIf="isHandset$ | async">
-        <a [routerLink]="['/']"><img class="logo" [title]="title" src="assets/img/logo.png" height="40"></a>
+        <a [routerLink]="['/']">{{title}}</a>
       </span>
       <span class="fill-remaining-space"></span>
-      <small>Hi, Rakin</small>
+      <small>Hi</small>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="right-menu">
         <mat-icon>more_vert</mat-icon>
       </button>
