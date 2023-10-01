@@ -11,6 +11,7 @@ import * as moment from 'moment';
 import { ThemePalette } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SnackbarService } from '@app/core/services/snackbar.service';
+import { LocalStorageService } from '@app/core/services/local-storage.service';
 @Component({
   selector: 'app-vehicle-save',
   templateUrl: './vehicle-save.component.html',
@@ -41,7 +42,8 @@ export class VehicleSaveComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private snackbar: SnackbarService,
-    private router: Router
+    private router: Router,
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -69,8 +71,11 @@ export class VehicleSaveComponent implements OnInit {
   }
 
   public onSubmit() {
+    debugger;
     let vehicleInfoList = [];
-    vehicleInfoList = JSON.parse(localStorage.getItem('vehicleInfo'));
+    vehicleInfoList = this.localStorageService.getLocalStorageData()
+      ? this.localStorageService.getLocalStorageData()
+      : [];
     if (this.params) {
       const index = vehicleInfoList.findIndex(
         (obj) => +obj.id === +this.params
@@ -90,7 +95,7 @@ export class VehicleSaveComponent implements OnInit {
       }
     } else {
       let id = 0;
-      if (vehicleInfoList.length > 0) {
+      if (vehicleInfoList && vehicleInfoList.length > 0) {
         id = vehicleInfoList.length;
       }
       let body = {
@@ -107,7 +112,7 @@ export class VehicleSaveComponent implements OnInit {
 
   public patchForm() {
     let vehicleInfoList = [];
-    vehicleInfoList = JSON.parse(localStorage.getItem('vehicleInfo'));
+    vehicleInfoList = this.localStorageService.getLocalStorageData();
     const vehicleObj = vehicleInfoList.find(
       (item) => +item.id === +this.params
     );
@@ -127,20 +132,3 @@ export class VehicleSaveComponent implements OnInit {
     });
   }
 }
-// const idToFind = 2; // Replace with the desired ID you want to find
-// const newObj = {
-//   "id": idToFind,
-//   "licenseNo": "newLicenseNo",
-//   // ... other properties of the new object
-// };
-
-// // Find the index of the object with the specified ID
-// const index = data.findIndex(obj => obj.id === idToFind);
-
-// // If the object with the specified ID is found (index is not -1), replace it with the new object
-// if (index !== -1) {
-//   data[index] = newObj;
-// } else {
-//   // Handle the case where the object with the specified ID was not found
-//   console.log(`Object with id ${idToFind} not found.`);
-// }

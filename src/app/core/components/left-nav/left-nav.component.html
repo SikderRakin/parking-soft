@@ -1,24 +1,21 @@
 <mat-nav-list>
   <mat-accordion>
-    <div class="menu-item-without-submennu">
-      <a mat-list-item routerLink="['/']">
+    <div class="menu-item-without-submennu" routerLinkActive="active">
+      <a class="sub-list" mat-list-item [routerLink]="['/dasboard']">
         <mat-icon class="icon-margin" aria-label="group" outline>dashboard-customize</mat-icon>
-        Dashboard
+        <span style="color: aliceblue;">Dashboard</span>
       </a>
     </div>
     <div class="menu-block">
       <h6 class="menu-title">Vehicle Info</h6>
       <div class="list-padding">
         <a mat-list-item class="sub-list" [routerLink]="['/vehicle/save']" routerLinkActive="active">
-          <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon> <span
+          <mat-icon class="icon-margin" aria-label="group" outline>menu</mat-icon> <span
             style="color: aliceblue;">VehicleInfo Save</span>
         </a>
         <a mat-list-item class="sub-list" [routerLink]="['/vehicle/list']" routerLinkActive="active">
           <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon><span
             style="color: aliceblue;">VehicleInfo List</span>
-        </a>
-        <a mat-list-item class="sub-list" routerLinkActive="active">
-          <mat-icon class="icon-margin" aria-label="group" outline>list_alt</mat-icon>Stock List
         </a>
 
       </div>

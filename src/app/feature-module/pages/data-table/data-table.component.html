@@ -1,5 +1,11 @@
 <div class="mat-table-responsive">
-  <h1>Vehicle List</h1>
+  <div class="header">
+    <h1>Vehicle List</h1>
+    <button [routerLink]="['/vehicle/save']" mat-raised-button color="primary">
+      <mat-icon>add</mat-icon>Add Info
+    </button>
+  </div>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Column definitions -->
@@ -14,7 +20,7 @@
     </ng-container>
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef>Vehicle type</th>
-      <td mat-cell *matCellDef="let element">{{ element.vehicleType }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.vehicleTypes|uppercase }}</td>
     </ng-container>
     <ng-container matColumnDef="licenseNo">
       <th mat-header-cell *matHeaderCellDef>License No</th>

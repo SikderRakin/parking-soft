@@ -9,6 +9,11 @@ const routes: Routes = [
         (m) => m.FeatureReportModule
       ),
   },
+  {
+    path: 'dasboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
 ];
 
 @NgModule({

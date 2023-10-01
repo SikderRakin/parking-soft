@@ -1,4 +1,8 @@
 <mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Vehicle Information Form</mat-card-title>
+  </mat-card-header>
   <mat-card-content>
     <form fxLayout="row wrap" fxLayoutGap="16px grid" [formGroup]="vehicleForm">
       <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
@@ -47,24 +51,23 @@
           </mat-error>
         </mat-form-field>
       </div>
-      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
 
-        <mat-label>Status</mat-label>
-
-        <mat-radio-group formControlName="status" aria-label="Select an option">
-          <mat-radio-button class="example-radio-button" *ngFor="let item of status" [value]="item.id">
-            {{item.title}}
-          </mat-radio-button>
-        </mat-radio-group>
-
-      </div>
       <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
         <mat-form-field appearance="outline">
           <mat-label>Owner Address</mat-label>
           <textarea matInput formControlName="ownerAddress"></textarea>
         </mat-form-field>
       </div>
-
+      <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
+        <mat-form-field appearance="outline">
+          <mat-label>Parking charge</mat-label>
+          <input matInput formControlName="charge" type="number">
+          <mat-error
+            *ngIf="vehicleForm.controls['charge']?.errors?.['required'] && (vehicleForm.controls['charge']?.dirty ||vehicleForm.controls['charge']?.touched )">
+            This is required Field
+          </mat-error>
+        </mat-form-field>
+      </div>
       <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
         <mat-form-field>
           <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" formControlName="entryTime"
@@ -97,15 +100,17 @@
 
       </div>
       <div fxFlex.gt-sm="33%" fxFlex.xs="100%">
-        <mat-form-field appearance="outline">
-          <mat-label>Parking charge</mat-label>
-          <input matInput formControlName="charge" type="number">
-          <mat-error
-            *ngIf="vehicleForm.controls['charge']?.errors?.['required'] && (vehicleForm.controls['charge']?.dirty ||vehicleForm.controls['charge']?.touched )">
-            This is required Field
-          </mat-error>
-        </mat-form-field>
+
+        <mat-label>Status</mat-label>
+
+        <mat-radio-group formControlName="status" aria-label="Select an option">
+          <mat-radio-button class="example-radio-button" *ngFor="let item of status" [value]="item.id">
+            {{item.title}}
+          </mat-radio-button>
+        </mat-radio-group>
+
       </div>
+
     </form>
     <button [disabled]="!vehicleForm.valid" (click)="onSubmit()" mat-raised-button
       color="primary">{{params?'Edit':'Submit'}}</button>
