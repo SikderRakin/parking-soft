@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.main-container {
+  padding: 1em;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  /*background-color: #303030;*/
+}
+
+.login-form-wrapper {
+  padding: 3rem;
+  width: 500px;
+  background: #d5d5d5;
+  border-radius: 0.8rem;
+  position: relative;
+}
+
+.sidenav {
+  width: 240px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.mat-form-field {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.mat-error {
+  font-size: 12px;
+}
+
+.dl-horizontal {
+  display: flex !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.dl-horizontal dt {
+  width: 30%;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.warn {
+  background-color: #e53935;
+  color: #f1f1f1;
+}
+
+.success {
+  background-color: #43a047;
+  color: #f1f1f1;
+}
+
+.darkgray-text {
+  color: darkgray;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.mat-form-field-subscript-wrapper {
+  margin-top: 0.3em !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

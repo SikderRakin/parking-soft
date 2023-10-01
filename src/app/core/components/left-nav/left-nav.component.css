@@ -1,0 +1,83 @@
+/* ::ng-deep.mat-list-base */
+.list-padding {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.icon-margin {
+  margin-right: 0.5rem;
+}
+.mat-list-base {
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+/* ::ng-deep.mat-expansion-panel */
+.mat-expansion-panel {
+  background-color: transparent;
+  padding: 0px 6px;
+}
+
+/* ::ng-deep .menu-block .mat-icon */
+.menu-block .mat-icon {
+  font-size: 16px;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* ::ng-deep.mat-accordion .menu-item-without-submennu */
+.mat-accordion .menu-item-without-submennu {
+  padding: 20px 30px;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ::ng-deep.mat-accordion .menu-item-without-submennu .mat-expansion-panel-header */
+.mat-accordion .menu-item-without-submennu .mat-expansion-panel-header {
+  padding: 0 16px;
+}
+
+/* ::ng-deep.mat-accordion .menu-item-without-submennu .mat-expansion-panel-header-title */
+.mat-accordion .menu-item-without-submennu .mat-expansion-panel-header-title {
+  color: white;
+}
+
+/* ::ng-deep.mat-accordion .menu-item-without-submennu .mat-expansion-panel-header-title .mat-icon */
+.mat-accordion
+  .menu-item-without-submennu
+  .mat-expansion-panel-header-title
+  .mat-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ::ng-deep.mat-accordion .mat-expansion-indicator::after */
+.mat-accordion .mat-expansion-indicator::after {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ::ng-deep.mat-accordion .menu-block */
+.mat-accordion .menu-block {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 0;
+}
+
+/* ::ng-deep.mat-accordion .menu-block .menu-title */
+.mat-accordion .menu-block .menu-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 30px;
+  margin-bottom: 0;
+}
+
+/* ::ng-deep.mat-accordion .menu-block > div a */
+.mat-accordion .menu-block > div a {
+  height: 42px;
+  font-size: 14px;
+  color: white;
+}
+
+/* ::ng-deep.mat-accordion .mat-nav-list a */
+.mat-accordion .mat-nav-list a {
+  color: white;
+}
